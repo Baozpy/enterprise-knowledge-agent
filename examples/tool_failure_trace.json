@@ -1,0 +1,62 @@
+{
+  "mode": "mock",
+  "case": "tool_failure",
+  "input": {
+    "question": "远程办公每周几天？",
+    "history": [],
+    "failure_injection": "read"
+  },
+  "status": "insufficient",
+  "answer": "工具连续失败，无法核实制度内容。",
+  "citations": [],
+  "knowledge_gap": "资料不足",
+  "trace": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "远程办公每周期限？ "
+      },
+      "decision_summary": "先检索相关制度",
+      "observation": [
+        {
+          "document_id": "D03",
+          "title": "远程办公制度",
+          "version_date": "2026-05-10",
+          "scope": "全体员工"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "action": "read_document",
+      "arguments": {
+        "document_id": "D03"
+      },
+      "decision_summary": "读取候选材料原文以确认依据或冲突",
+      "error": "read_backend_unavailable"
+    },
+    {
+      "step": 3,
+      "action": "read_document",
+      "arguments": {
+        "document_id": "D03"
+      },
+      "decision_summary": "工具异常，尝试一次重试",
+      "error": "read_backend_unavailable"
+    },
+    {
+      "step": 4,
+      "action": "finish",
+      "arguments": {
+        "status": "insufficient",
+        "answer": "工具连续失败，无法核实制度内容。",
+        "citations": []
+      },
+      "decision_summary": "失败后停止，避免无依据回答",
+      "observation": {
+        "status": "insufficient"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "mode": "live",
+  "status": "insufficient",
+  "answer": "系统中未找到关于公司2027年股票期权授予规则的相关文件，无法提供具体内容。",
+  "citations": [],
+  "knowledge_gap": "资料不足",
+  "trace": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "2027年 股票期权授予规则"
+      },
+      "decision_summary": "需要搜索包含2027年股票期权授予规则的相关文件以获取准确内容",
+      "observation": [
+        {
+          "document_id": "D01",
+          "title": "员工费用报销规定（甲方案）",
+          "version_date": "2026-01-01",
+          "scope": "未注明"
+        },
+        {
+          "document_id": "D02",
+          "title": "员工费用报销规定（乙方案）",
+          "version_date": "2026-06-01",
+          "scope": "未注明"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "action": "search_documents",
+      "arguments": {
+        "query": "2027年 股票期权授予规则"
+      },
+      "decision_summary": "首次搜索未找到相关文件，尝试更换关键词继续搜索2027年股票期权授予规则相关文件",
+      "observation": [
+        {
+          "document_id": "D01",
+          "title": "员工费用报销规定（甲方案）",
+          "version_date": "2026-01-01",
+          "scope": "未注明"
+        },
+        {
+          "document_id": "D02",
+          "title": "员工费用报销规定（乙方案）",
+          "version_date": "2026-06-01",
+          "scope": "未注明"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "arguments": {
+        "answer": "系统中未找到关于公司2027年股票期权授予规则的相关文件，无法提供具体内容。",
+        "citations": [],
+        "status": "insufficient"
+      },
+      "decision_summary": "两次搜索均未检索到包含2027年股票期权授予规则的文件，资料不足无法回答。",
+      "observation": {
+        "status": "insufficient"
+      }
+    }
+  ]
+}

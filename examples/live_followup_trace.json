@@ -1,0 +1,82 @@
+{
+  "mode": "live",
+  "status": "completed",
+  "answer": "根据远程办公制度D03，员工需要至少提前1个工作日提交远程办公申请，并获得直属主管批准。",
+  "citations": [
+    {
+      "document_id": "D03",
+      "quote": "远程办公须至少提前1个工作日提交申请并获得直属主管批准。",
+      "version_date": "2026-05-10"
+    }
+  ],
+  "knowledge_gap": null,
+  "trace": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "远程办公 申请"
+      },
+      "decision_summary": "用户询问远程办公是否需要提前申请，需搜索相关申请流程的制度文件内容",
+      "observation": [
+        {
+          "document_id": "D03",
+          "title": "远程办公制度",
+          "version_date": "2026-05-10",
+          "scope": "全体员工"
+        },
+        {
+          "document_id": "D01",
+          "title": "员工费用报销规定（甲方案）",
+          "version_date": "2026-01-01",
+          "scope": "未注明"
+        },
+        {
+          "document_id": "D02",
+          "title": "员工费用报销规定（乙方案）",
+          "version_date": "2026-06-01",
+          "scope": "未注明"
+        },
+        {
+          "document_id": "D04",
+          "title": "国内差旅管理办法",
+          "version_date": "2026-04-01",
+          "scope": "全体员工"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "action": "read_document",
+      "arguments": {
+        "document_id": "D03"
+      },
+      "decision_summary": "远程办公相关申请流程通常在远程办公制度中规定，需读取D03远程办公制度确认是否需要提前申请。",
+      "observation": {
+        "id": "D03",
+        "title": "远程办公制度",
+        "version_date": "2026-05-10",
+        "scope": "全体员工",
+        "text": "员工每周最多可远程办公2天。远程办公须至少提前1个工作日提交申请并获得直属主管批准。"
+      }
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "arguments": {
+        "answer": "根据远程办公制度D03，员工需要至少提前1个工作日提交远程办公申请，并获得直属主管批准。",
+        "citations": [
+          {
+            "document_id": "D03",
+            "quote": "远程办公须至少提前1个工作日提交申请并获得直属主管批准。"
+          }
+        ],
+        "status": "completed"
+      },
+      "decision_summary": "从远程办公制度D03中明确得知远程办公需要提前申请并获得批准，直接回答用户问题。",
+      "observation": {
+        "status": "completed"
+      }
+    }
+  ]
+}

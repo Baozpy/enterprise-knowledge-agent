@@ -1,0 +1,70 @@
+{
+  "mode": "mock",
+  "case": "paraphrase",
+  "input": {
+    "question": "在家工作每周可以几天？",
+    "history": [],
+    "failure_injection": null
+  },
+  "status": "completed",
+  "answer": "员工每周最多可远程办公2天。",
+  "citations": [
+    {
+      "document_id": "D03",
+      "quote": "员工每周最多可远程办公2天。",
+      "version_date": "2026-05-10"
+    }
+  ],
+  "knowledge_gap": null,
+  "trace": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "远程办公每周可以期限？ "
+      },
+      "decision_summary": "先检索相关制度",
+      "observation": [
+        {
+          "document_id": "D03",
+          "title": "远程办公制度",
+          "version_date": "2026-05-10",
+          "scope": "全体员工"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "action": "read_document",
+      "arguments": {
+        "document_id": "D03"
+      },
+      "decision_summary": "读取候选材料原文以确认依据或冲突",
+      "observation": {
+        "id": "D03",
+        "title": "远程办公制度",
+        "version_date": "2026-05-10",
+        "scope": "全体员工",
+        "text": "员工每周最多可远程办公2天。远程办公须至少提前1个工作日提交申请并获得直属主管批准。"
+      }
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "arguments": {
+        "status": "completed",
+        "answer": "员工每周最多可远程办公2天。",
+        "citations": [
+          {
+            "document_id": "D03",
+            "quote": "员工每周最多可远程办公2天。"
+          }
+        ]
+      },
+      "decision_summary": "选取已读文档中的原文作为回答依据",
+      "observation": {
+        "status": "completed"
+      }
+    }
+  ]
+}

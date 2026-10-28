@@ -1,0 +1,122 @@
+{
+  "mode": "mock",
+  "case": "out_of_scope",
+  "input": {
+    "question": "公司提供宠物保险吗？",
+    "history": [],
+    "failure_injection": null
+  },
+  "status": "insufficient",
+  "answer": "资料没有支持此问题的明确规定。",
+  "citations": [],
+  "knowledge_gap": "资料不足",
+  "trace": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "公司提供宠物保险吗？ "
+      },
+      "decision_summary": "先检索相关制度",
+      "observation": [
+        {
+          "document_id": "D03",
+          "title": "远程办公制度",
+          "version_date": "2026-05-10",
+          "scope": "全体员工"
+        },
+        {
+          "document_id": "D01",
+          "title": "员工费用报销规定（甲方案）",
+          "version_date": "2026-01-01",
+          "scope": "未注明"
+        },
+        {
+          "document_id": "D02",
+          "title": "员工费用报销规定（乙方案）",
+          "version_date": "2026-06-01",
+          "scope": "未注明"
+        },
+        {
+          "document_id": "D06",
+          "title": "数据保留制度",
+          "version_date": "2026-08-01",
+          "scope": "企业版客户"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "action": "read_document",
+      "arguments": {
+        "document_id": "D03"
+      },
+      "decision_summary": "读取候选材料原文以确认依据或冲突",
+      "observation": {
+        "id": "D03",
+        "title": "远程办公制度",
+        "version_date": "2026-05-10",
+        "scope": "全体员工",
+        "text": "员工每周最多可远程办公2天。远程办公须至少提前1个工作日提交申请并获得直属主管批准。"
+      }
+    },
+    {
+      "step": 3,
+      "action": "read_document",
+      "arguments": {
+        "document_id": "D01"
+      },
+      "decision_summary": "读取候选材料原文以确认依据或冲突",
+      "observation": {
+        "id": "D01",
+        "title": "员工费用报销规定（甲方案）",
+        "version_date": "2026-01-01",
+        "scope": "未注明",
+        "text": "员工报销应在费用发生后30天内提交申请。该文件未注明适用部门和版本优先级。"
+      }
+    },
+    {
+      "step": 4,
+      "action": "read_document",
+      "arguments": {
+        "document_id": "D02"
+      },
+      "decision_summary": "读取候选材料原文以确认依据或冲突",
+      "observation": {
+        "id": "D02",
+        "title": "员工费用报销规定（乙方案）",
+        "version_date": "2026-06-01",
+        "scope": "未注明",
+        "text": "员工报销应在费用发生后15天内提交申请。该文件未注明适用部门和版本优先级。"
+      }
+    },
+    {
+      "step": 5,
+      "action": "read_document",
+      "arguments": {
+        "document_id": "D06"
+      },
+      "decision_summary": "读取候选材料原文以确认依据或冲突",
+      "observation": {
+        "id": "D06",
+        "title": "数据保留制度",
+        "version_date": "2026-08-01",
+        "scope": "企业版客户",
+        "text": "企业版审计日志默认保留90天。如需延长，请联系客户成功团队。"
+      }
+    },
+    {
+      "step": 6,
+      "action": "finish",
+      "arguments": {
+        "status": "insufficient",
+        "answer": "资料没有支持此问题的明确规定。",
+        "citations": []
+      },
+      "decision_summary": "检索材料不能支撑答复",
+      "observation": {
+        "status": "insufficient"
+      }
+    }
+  ]
+}

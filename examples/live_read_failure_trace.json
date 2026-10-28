@@ -1,0 +1,56 @@
+{
+  "mode": "live",
+  "status": "insufficient",
+  "answer": "当前无法读取远程办公制度文档，无法确认公司每周允许远程办公的具体天数。",
+  "citations": [],
+  "knowledge_gap": "资料不足",
+  "trace": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "每周允许远程办公天数"
+      },
+      "decision_summary": "需要搜索相关文档以获取公司远程办公的具体规定",
+      "observation": [
+        {
+          "document_id": "D03",
+          "title": "远程办公制度",
+          "version_date": "2026-05-10",
+          "scope": "全体员工"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "action": "read_document",
+      "arguments": {
+        "document_id": "D03"
+      },
+      "decision_summary": "搜索到远程办公相关文档D03，需阅读全文确认具体允许的远程办公天数",
+      "error": "read_backend_unavailable"
+    },
+    {
+      "step": 3,
+      "action": "read_document",
+      "arguments": {
+        "document_id": "D03"
+      },
+      "decision_summary": "首次读取D03文档失败，尝试重新读取以获取远程办公天数信息",
+      "error": "read_backend_unavailable"
+    },
+    {
+      "step": 4,
+      "action": "finish",
+      "arguments": {
+        "answer": "当前无法读取远程办公制度文档，无法确认公司每周允许远程办公的具体天数。",
+        "citations": [],
+        "status": "insufficient"
+      },
+      "decision_summary": "多次尝试读取远程办公制度文档D03失败，无法获取具体远程办公天数信息",
+      "observation": {
+        "status": "insufficient"
+      }
+    }
+  ]
+}

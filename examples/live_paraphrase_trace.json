@@ -1,0 +1,88 @@
+{
+  "mode": "live",
+  "status": "completed",
+  "answer": "根据《远程办公制度》，员工每周最多可以有2天不去办公室上班，即最多远程办公2天。",
+  "citations": [
+    {
+      "document_id": "D03",
+      "quote": "员工每周最多可远程办公2天。",
+      "version_date": "2026-05-10"
+    }
+  ],
+  "knowledge_gap": null,
+  "trace": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "员工 一周 最多 不去办公室 上班 天数"
+      },
+      "decision_summary": "需要搜索相关文档以确定员工一周最多可以有多少天不去办公室上班的规定。",
+      "observation": [
+        {
+          "document_id": "D03",
+          "title": "远程办公制度",
+          "version_date": "2026-05-10",
+          "scope": "全体员工"
+        },
+        {
+          "document_id": "D01",
+          "title": "员工费用报销规定（甲方案）",
+          "version_date": "2026-01-01",
+          "scope": "未注明"
+        },
+        {
+          "document_id": "D02",
+          "title": "员工费用报销规定（乙方案）",
+          "version_date": "2026-06-01",
+          "scope": "未注明"
+        },
+        {
+          "document_id": "D04",
+          "title": "国内差旅管理办法",
+          "version_date": "2026-04-01",
+          "scope": "全体员工"
+        },
+        {
+          "document_id": "D06",
+          "title": "数据保留制度",
+          "version_date": "2026-08-01",
+          "scope": "企业版客户"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "action": "read_document",
+      "arguments": {
+        "document_id": "D03"
+      },
+      "decision_summary": "文档D03《远程办公制度》标题与员工远程办公相关，最可能包含员工一周最多不去办公室上班的规定，先阅读该文档。",
+      "observation": {
+        "id": "D03",
+        "title": "远程办公制度",
+        "version_date": "2026-05-10",
+        "scope": "全体员工",
+        "text": "员工每周最多可远程办公2天。远程办公须至少提前1个工作日提交申请并获得直属主管批准。"
+      }
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "arguments": {
+        "answer": "根据《远程办公制度》，员工每周最多可以有2天不去办公室上班，即最多远程办公2天。",
+        "citations": [
+          {
+            "document_id": "D03",
+            "quote": "员工每周最多可远程办公2天。"
+          }
+        ],
+        "status": "completed"
+      },
+      "decision_summary": "文档D03《远程办公制度》明确规定员工每周最多远程办公2天，直接回答了问题。",
+      "observation": {
+        "status": "completed"
+      }
+    }
+  ]
+}

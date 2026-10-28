@@ -1,0 +1,138 @@
+{
+  "mode": "mock",
+  "case": "followup",
+  "input": {
+    "question": "那要提前申请吗？",
+    "history": [
+      {
+        "question": "远程办公制度是什么？",
+        "answer": "每周最多2天"
+      }
+    ],
+    "failure_injection": null
+  },
+  "status": "completed",
+  "answer": "远程办公须至少提前1个工作日提交申请并获得直属主管批准。",
+  "citations": [
+    {
+      "document_id": "D03",
+      "quote": "远程办公须至少提前1个工作日提交申请并获得直属主管批准。",
+      "version_date": "2026-05-10"
+    }
+  ],
+  "knowledge_gap": null,
+  "trace": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "那要申请申请吗？ 远程办公制度是什么？"
+      },
+      "decision_summary": "先检索相关制度",
+      "observation": [
+        {
+          "document_id": "D03",
+          "title": "远程办公制度",
+          "version_date": "2026-05-10",
+          "scope": "全体员工"
+        },
+        {
+          "document_id": "D01",
+          "title": "员工费用报销规定（甲方案）",
+          "version_date": "2026-01-01",
+          "scope": "未注明"
+        },
+        {
+          "document_id": "D02",
+          "title": "员工费用报销规定（乙方案）",
+          "version_date": "2026-06-01",
+          "scope": "未注明"
+        },
+        {
+          "document_id": "D04",
+          "title": "国内差旅管理办法",
+          "version_date": "2026-04-01",
+          "scope": "全体员工"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "action": "read_document",
+      "arguments": {
+        "document_id": "D03"
+      },
+      "decision_summary": "读取候选材料原文以确认依据或冲突",
+      "observation": {
+        "id": "D03",
+        "title": "远程办公制度",
+        "version_date": "2026-05-10",
+        "scope": "全体员工",
+        "text": "员工每周最多可远程办公2天。远程办公须至少提前1个工作日提交申请并获得直属主管批准。"
+      }
+    },
+    {
+      "step": 3,
+      "action": "read_document",
+      "arguments": {
+        "document_id": "D01"
+      },
+      "decision_summary": "读取候选材料原文以确认依据或冲突",
+      "observation": {
+        "id": "D01",
+        "title": "员工费用报销规定（甲方案）",
+        "version_date": "2026-01-01",
+        "scope": "未注明",
+        "text": "员工报销应在费用发生后30天内提交申请。该文件未注明适用部门和版本优先级。"
+      }
+    },
+    {
+      "step": 4,
+      "action": "read_document",
+      "arguments": {
+        "document_id": "D02"
+      },
+      "decision_summary": "读取候选材料原文以确认依据或冲突",
+      "observation": {
+        "id": "D02",
+        "title": "员工费用报销规定（乙方案）",
+        "version_date": "2026-06-01",
+        "scope": "未注明",
+        "text": "员工报销应在费用发生后15天内提交申请。该文件未注明适用部门和版本优先级。"
+      }
+    },
+    {
+      "step": 5,
+      "action": "read_document",
+      "arguments": {
+        "document_id": "D04"
+      },
+      "decision_summary": "读取候选材料原文以确认依据或冲突",
+      "observation": {
+        "id": "D04",
+        "title": "国内差旅管理办法",
+        "version_date": "2026-04-01",
+        "scope": "全体员工",
+        "text": "国内差旅住宿标准为每晚不超过600元。超标须事前获得部门负责人书面批准。"
+      }
+    },
+    {
+      "step": 6,
+      "action": "finish",
+      "arguments": {
+        "status": "completed",
+        "answer": "远程办公须至少提前1个工作日提交申请并获得直属主管批准。",
+        "citations": [
+          {
+            "document_id": "D03",
+            "quote": "远程办公须至少提前1个工作日提交申请并获得直属主管批准。"
+          }
+        ]
+      },
+      "decision_summary": "选取已读文档中的原文作为回答依据",
+      "observation": {
+        "status": "completed"
+      }
+    }
+  ]
+}

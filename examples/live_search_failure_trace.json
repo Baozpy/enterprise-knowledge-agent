@@ -1,0 +1,40 @@
+{
+  "mode": "live",
+  "status": "insufficient",
+  "answer": "当前无法访问搜索服务，无法获取公司每周允许远程办公的具体天数信息。建议稍后重试或联系相关部门获取准确信息。",
+  "citations": [],
+  "knowledge_gap": "资料不足",
+  "trace": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "远程办公 每周 天数"
+      },
+      "decision_summary": "需要搜索公司远程办公政策相关文档以确定每周允许远程办公的天数",
+      "error": "search_backend_unavailable"
+    },
+    {
+      "step": 2,
+      "action": "search_documents",
+      "arguments": {
+        "query": "远程办公 每周 允许 天数"
+      },
+      "decision_summary": "首次搜索失败，重新尝试搜索公司远程办公政策相关文档以确定每周允许远程办公的天数",
+      "error": "search_backend_unavailable"
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "arguments": {
+        "answer": "当前无法访问搜索服务，无法获取公司每周允许远程办公的具体天数信息。建议稍后重试或联系相关部门获取准确信息。",
+        "citations": [],
+        "status": "insufficient"
+      },
+      "decision_summary": "搜索服务不可用，无法获取相关文档，故无法回答问题",
+      "observation": {
+        "status": "insufficient"
+      }
+    }
+  ]
+}
